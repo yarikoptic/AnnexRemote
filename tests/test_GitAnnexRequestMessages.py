@@ -3,7 +3,7 @@
 import io
 import logging
 
-import utils
+from . import utils
 
 RemoteError = utils.annexremote.RemoteError
 ProtocolError = utils.annexremote.ProtocolError

@@ -1,5 +1,5 @@
 import io
-import utils
+from . import utils
 
 ProtocolError = utils.annexremote.ProtocolError
 
