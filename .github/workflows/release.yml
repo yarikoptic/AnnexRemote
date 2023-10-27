@@ -2,8 +2,10 @@ name: Auto-release on PR merge
 
 on:
   push:
-    branches:
-      - master
+    branches: [bf-build]
+  pull_request:
+    branches: [master]
+
 
 jobs:
   auto-release:
@@ -32,8 +34,9 @@ jobs:
       - name: Create release
         run: ~/auto shipit -vv
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: YYY
+          SETUPTOOLS_SCM_DEBUG: 1
           TWINE_USERNAME: __token__
-          TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+          TWINE_PASSWORD: XXX
 
 # vim:set sts=2:
