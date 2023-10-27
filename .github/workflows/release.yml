@@ -32,7 +32,7 @@ jobs:
         run: python -m pip install build twine
 
       - name: Create release
-        run: ~/auto shipit -vv
+        run: python -m build
         env:
           GH_TOKEN: YYY
           SETUPTOOLS_SCM_DEBUG: 1
