@@ -32,7 +32,10 @@ jobs:
         run: python -m pip install build twine
 
       - name: Create release
-        run: python -m build
+        run: |
+          python -m build
+          tar -tzvf dist/annexremote-*.tar.gz | grep _ver
+
         env:
           GH_TOKEN: YYY
           SETUPTOOLS_SCM_DEBUG: 1
